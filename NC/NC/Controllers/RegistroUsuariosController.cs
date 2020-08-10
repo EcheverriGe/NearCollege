@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using NC.Filters;
 using NC.Models;
+using NC.Pass;
 
 namespace NC.Controllers
 {
@@ -57,6 +58,7 @@ namespace NC.Controllers
         {
             if (ModelState.IsValid)
             {
+                tbl_Usuarios.ContraseñaUsuario = Hashing.HashPassword(tbl_Usuarios.ContraseñaUsuario);
                 db.Tbl_Usuarios.Add(tbl_Usuarios);
                 db.SaveChanges();
                 return RedirectToAction("Index");
