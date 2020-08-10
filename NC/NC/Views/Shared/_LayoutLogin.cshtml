@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f845d70a5b.js" crossorigin="anonymous"></script>
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     @Styles.Render("~/Content/css")
@@ -61,7 +62,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row-col-md-5" style="position:relative; left:93%; bottom:530px;">
+            <div class="row-col-md-5" style="position:relative; left:90%; bottom:530px;">
                 <div style="margin-top:100px ;">
                     <h2>Inicia sesión</h2>
                     <div class="danger">
@@ -70,10 +71,12 @@
                     <form id="frm" action="@Url.Content("~/Acceso/Login")" method="post">
                         <div class="form-group">
                             <p style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:20px;">Correo</p>
+                            <i class="far fa-envelope"></i>
                             <input type="email" name="CorreoUsuario" />
                         </div>
                         <div class="form-group">
                             <p style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:20px;">Contraseña</p>
+                            <i class="fas fa-lock"></i>
                             <input type="password" name="ContraseñaUsuario" />
                         </div>
                         <br />
