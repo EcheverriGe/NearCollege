@@ -1,0 +1,41 @@
+﻿@model NC.Models.Tbl_Grados
+
+@{
+    ViewBag.Title = "Detalles grado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Detalles grado</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreGrado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreGrado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JornadaGrado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JornadaGrado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DisponibilidadCupoGrado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisponibilidadCupoGrado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-info" })
+</p>

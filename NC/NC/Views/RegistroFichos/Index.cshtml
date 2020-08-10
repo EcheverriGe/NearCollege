@@ -1,0 +1,38 @@
+﻿@model IEnumerable<NC.Models.Tbl_Fichos>
+
+@{
+    ViewBag.Title = "Página principal (Usuario)";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Fichos reservados</h2>
+
+<p>
+    @Html.ActionLink("Agregar", "Create", null, new { @class = "btn btn-info" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaFicho)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl_Usuarios.NombreUsuario)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaFicho)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tbl_Usuarios.NombreUsuario)
+        </td>
+        <td>
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.IdFicho })
+        </td>
+    </tr>
+}
+
+</table>

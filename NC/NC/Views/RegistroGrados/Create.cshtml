@@ -1,0 +1,69 @@
+﻿@model NC.Models.Tbl_Grados
+
+@{
+    ViewBag.Title = "Agregar grado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <script type="text/javascript">
+        function ConfirmDelete() {
+            var respuesta = confirm("¿Estás seguro?,  ¡Al darle click en aceptar este grado será añadido!");
+
+            if (respuesta == true) {
+
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+
+
+<h2 class="text-center">Agregar grado</h2>
+<br />
+<div class="alert alert-success" role="alert">
+    <p class="text-center"> ¿Estás seguro acerca de registrar a este usuario?</p>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.NombreGrado, "Nombre grado", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NombreGrado, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NombreGrado, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.JornadaGrado, "Jornada", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.JornadaGrado, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.JornadaGrado, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DisponibilidadCupoGrado, "Disponibilidad", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DisponibilidadCupoGrado, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DisponibilidadCupoGrado, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-actions no-color">
+            <input type="submit" onclick="return ConfirmDelete()" value="Agregar" class="btn btn-success" /> |
+            @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-info" })
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

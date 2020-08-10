@@ -1,0 +1,46 @@
+﻿@model IEnumerable<NC.Models.Tbl_Grados>
+
+@{
+    ViewBag.Title = "Página principal (Institución)";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Grados disponibles</h2>
+
+<p>
+    @Html.ActionLink("Agregar", "Create", null, new { @class = "btn btn-info" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreGrado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JornadaGrado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DisponibilidadCupoGrado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreGrado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JornadaGrado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DisponibilidadCupoGrado)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdGrado }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.IdGrado }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.IdGrado })
+        </td>
+    </tr>
+}
+
+</table>

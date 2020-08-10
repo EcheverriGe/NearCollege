@@ -1,0 +1,79 @@
+﻿    
+@{
+    ViewBag.Title = "¡Inicia sesión en NearCollege!";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+
+@*<style>
+    .borde {
+        border: 1px #000 solid;
+        text-align: center;
+        height: 50px;
+    }
+
+    .color1 {
+        background: #eeeeee;
+    }
+
+    .color2 {
+        background: #fcc314;
+    }
+
+    .color3 {
+        background: #94ac3c;
+    }
+
+    .color4 {
+        background: #295ba7;
+    }
+
+    .titulo {
+        text-align: right;
+        height: 50px;
+    }
+</style>
+
+<div class="row">
+    <div class="borde color4 col-sm-12">Header</div>
+</div>
+
+<div class="row">
+    <div class="borde color1 col-sm-6 col-md-3 hidden-xs">Izquierda</div>
+    <div class="borde color2 col-sm-6 col-md-3">Contenido</div>
+    <div class="borde color3 col-sm-12 col-md-6">Derecha</div>
+</div>
+
+<div class="row">
+    <div class="borde color4 col-sm-12">Footer</div>
+</div>*@
+
+
+@{
+    var a = 1;
+}
+
+@section scripts
+{
+    <script>
+    $(document).ready(function () {
+
+        $("#frm").submit(function (e) {
+            e.preventDefault();
+
+            url = "@Url.Content("~/Acceso/Login")"
+            parametros = $(this).serialize();
+
+            $.post(url, parametros, function (data) {
+
+                if (data == "1") {
+                    document.location.href = "@Url.Content("~/")";
+                }
+                else {
+                    alert(data)
+                }
+            })
+        })
+    })
+    </script>
+}

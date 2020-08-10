@@ -1,0 +1,53 @@
+﻿@model IEnumerable<NC.Models.Tbl_Usuarios>
+
+@{
+    ViewBag.Title = "Página principal (Administrador)";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Usuarios registrados</h2>
+
+<p>
+    @Html.ActionLink("Agregar", "Create", null, new { @class = "btn btn-info " })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CorreoUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl_Roles.NombreRol)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreUsuario, "Nombre")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoUsuario, "Apellido")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CorreoUsuario, "Correo")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_Roles.NombreRol, "Rol")
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.IdUsuario}) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.IdUsuario }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdUsuario })
+            </td>
+        </tr>
+    }
+
+</table>

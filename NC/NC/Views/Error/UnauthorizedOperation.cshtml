@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "UnauthorizedOperation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <!--Content Header (Page header)-->
+    <section class="content-header">
+        <br />
+        <div class="alert alert-danger" role="alert">
+            Error.
+        </div>
+        
+    </section>
+    <!--Main content-->
+    <section class="content">
+        <div class="error-page">
+            <br />
+            <div class="alert alert-danger" role="alert">
+                Permisos insuficientes.
+            </div>            <div class="error-content">
+                <br />
+                <div class="alert alert-danger" role="alert">
+                    No tienes las autorizaciones necesarias para acceder a esta función / acción.
+                </div>
+                <br />
+                @if (ViewBag.operacion != "")
+                {
+                    <p>Operación @ViewBag.operacion </p>
+                }
+                @if (ViewBag.modulo != "")
+                {
+                    <p>Módulo @ViewBag.modulo </p>
+                }
+                @if (ViewBag.msjeErrorExcepcion != "")
+                {
+                    <p>@ViewBag.msjeErrorExcepcion </p>
+                }
+            </div>
+        </div>
+        <!--/.error-page-->
+    </section>
+    

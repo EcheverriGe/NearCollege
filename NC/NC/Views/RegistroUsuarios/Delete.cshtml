@@ -1,0 +1,74 @@
+﻿@model NC.Models.Tbl_Usuarios
+
+@{
+    ViewBag.Title = "Eliminar usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <script type="text/javascript">
+        function ConfirmDelete() {
+            var respuesta = confirm("¿Estás seguro?,  ¡Al darle click en aceptar este usuario será borrado de forma permanente!");
+
+            if (respuesta == true) {
+
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+
+<h2 class="text-center">Eliminar usuario</h2>
+<br />
+<div class="alert alert-danger" role="alert">
+    <p class="text-center"> ¿Estás seguro acerca de eliminar a este usuario? </p>
+</div>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CorreoUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CorreoUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tbl_Roles.NombreRol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tbl_Roles.NombreRol)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+     {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+        <input type="submit" onclick="return ConfirmDelete()" value="Eliminar" class="btn btn-danger" /> |
+        @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-info" })
+        </div>
+     }
+</div>

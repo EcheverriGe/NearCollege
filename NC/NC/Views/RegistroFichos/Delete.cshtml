@@ -1,0 +1,58 @@
+﻿@model NC.Models.Tbl_Fichos
+
+@{
+    ViewBag.Title = "Eliminar ficho";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <script type="text/javascript">
+        function ConfirmDelete() {
+            var respuesta = confirm("¿Estás seguro?,  ¡Al darle click en aceptar este ficho será borrado!");
+
+            if (respuesta == true) {
+
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+
+<h2 class="text-center">Eliminar ficho</h2>
+<br />
+<div class="alert alert-danger" role="alert">
+    <p class="text-center"> ¿Está seguro de eliminar este ficho? </p>
+</div>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaFicho)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaFicho)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tbl_Usuarios.NombreUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tbl_Usuarios.NombreUsuario)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+        <input type="submit" onclick="return ConfirmDelete()" value="Eliminar" class="btn btn-danger" /> |
+        @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-info" })
+        </div>
+    }
+</div>

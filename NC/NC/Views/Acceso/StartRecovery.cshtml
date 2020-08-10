@@ -1,0 +1,38 @@
+﻿@model NC .Models.ViewModel.RecoveryViewModel
+@{
+    ViewBag.Title = "¡Recupera tu contraseña!";
+    Layout = "~/Views/Shared/_LayoutRecovery.cshtml";
+}
+
+    <script type="text/javascript">
+        function ConfirmDelete() {
+            var respuesta = confirm("¿Estás seguro de enviar el mensaje de recuperación a ese correo electrónico?, ¿Está correcta tu dirección de correo electrónico?, Si la respuesta es sí a estas dos preguntas, presiona el botón aceptar ");
+
+            if (respuesta == true) {
+
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <div class="form-style">
+            <form action="@Url.Content("~/Acceso/StartRecovery")" method="post">
+                <br />
+                <p style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:20px;">Ingresa tu correo electrónico</p>
+                @Html.TextBoxFor(d => d.CorreoUsuario, null, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.CorreoUsuario, null, new { style = "Color:red;" })
+                <br />
+                <div class="text-right form-actions no-color">
+                    <input type="submit" onclick="return ConfirmDelete()" value="Recuperar" class="btn btn-primary" />
+                    @Html.ActionLink("Regresar", "Login", null, new { @class = "btn btn-info" })
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

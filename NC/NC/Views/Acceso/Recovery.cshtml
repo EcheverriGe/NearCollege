@@ -1,0 +1,43 @@
+﻿@model NC.Models.ViewModel.RecoveryPassWordViewModel
+@{
+    ViewBag.Title = "¡Restablecer Contraseña!";
+    Layout = "~/Views/Shared/_LayoutRecovery.cshtml";
+}
+
+    <script type="text/javascript">
+        function ConfirmDelete() {
+            var respuesta = confirm("¿Estás seguro?, ¿Quieres guardar la contraseña ingresada como tu nueva contraseña?");
+
+            if (respuesta == true) {
+
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <div class="form-style">
+                <form action="@Url.Content("~/Acceso/Recovery")" method="post">
+                    @Html.HiddenFor(d => d.Token)
+                    <br />
+                    <p style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:20px;">Ingresa tu nueva contraseña</p>
+                    @Html.PasswordFor(d => d.ContraseñaUsuario, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(d => d.ContraseñaUsuario, null, new { style = "Color:red;" })
+
+                    <p style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:20px;">Ingresa de nuevo tu contraseña</p>
+                    @Html.PasswordFor(d => d.ContraseñaUsuario2, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(d => d.ContraseñaUsuario2, null, new { style = "Color:red;" })
+                    <br />
+                    <div class="text-right form-actions no-color">
+                        <input type="submit" onclick="return ConfirmDelete()" value="Restablecer" class="btn btn-primary" /> |
+                        @Html.ActionLink("Regresar", "Login", null, new { @class = "btn btn-info" })
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+

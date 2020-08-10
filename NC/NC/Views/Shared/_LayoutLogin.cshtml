@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <br />
+    <div class="alert alert-success text-center" role="alert">
+        @ViewBag.Message
+    </div>
+    <div class="alert alert-danger text-center" role="alert">
+        @ViewBag.Error
+    </div>
+    <div class="container" style="height:50%;">
+        <div class="row">
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                        <img style="position:relative; right:620%; bottom:2px;" id="img1" src="~/Content/Images/NC.png" class="" />
+                    </a>
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <p style="position:relative; top:59px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:29px; text-align:center; left:35%;">¡Bienvenidos a NearCollege!</p>
+            <div class="row" style="position:relative; right:10%;">
+                <div class="col-md-4">
+                    <div class="container" style="margin-top:100px; margin-left:-50px;">
+                        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="~/Content/Images/JEGAD2.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/Content/Images/JEGAT4.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/Content/Images/JEGAU1.png" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-col-md-5" style="position:relative; left:93%; bottom:530px;">
+                <div style="margin-top:100px ;">
+                    <h2>Inicia sesión</h2>
+                    <div class="danger">
+                        @ViewBag.Error
+                    </div>
+                    <form id="frm" action="@Url.Content("~/Acceso/Login")" method="post">
+                        <div class="form-group">
+                            <p style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:20px;">Correo</p>
+                            <input type="email" name="CorreoUsuario" />
+                        </div>
+                        <div class="form-group">
+                            <p style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:20px;">Contraseña</p>
+                            <input type="password" name="ContraseñaUsuario" />
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <input type="submit" value="Iniciar sesión" class="btn btn-primary" />
+                        </div>
+                        <div>
+                            @Html.ActionLink("¿Olvidaste tu contraseña?", "StartRecovery")
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - NearCollege, sin duda una buena opción.</p>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
