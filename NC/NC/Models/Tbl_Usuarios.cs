@@ -11,7 +11,8 @@ namespace NC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Tbl_Usuarios
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,16 +22,32 @@ namespace NC.Models
         }
     
         public int IdUsuario { get; set; }
+
+        [Required (ErrorMessage = "¡Este campo es requerido si desea registrar un usuario!")]
+        [MaxLength (15, ErrorMessage = "¡La cantidad de caracteres máxima permitida para este campo es de: 15!")]
+        [MinLength (3, ErrorMessage = "¡La cantidad de caracteres mínima permitida para este campo es de: 3!")]
         public string NombreUsuario { get; set; }
+
+        [Required(ErrorMessage = "¡Este campo es requerido si desea registrar un usuario!")]
+        [MaxLength(16, ErrorMessage = "¡La cantidad de caracteres máxima permitida para este campo es de: 16!")]
+        [MinLength(3, ErrorMessage = "¡La cantidad de caracteres mínima permitida para este campo es de: 3!")]
         public string ApellidoUsuario { get; set; }
+
+        [Required(ErrorMessage = "¡Este campo es requerido si desea registrar un usuario!")]
+        [EmailAddress(ErrorMessage = "¡El dato recién ingresado no está validado como una dirección de correo electrónico!")]
+        [MaxLength (55, ErrorMessage = "¡La cantidad de caracteres máxima permitida para este campo es de: 55!")]
         public string CorreoUsuario { get; set; }
+
+        [Required(ErrorMessage = "¡Este campo es requerido si desea registrar un usuario!")]
+        [MaxLength (500, ErrorMessage = "¡La cantidad de caracteres máxima permitida para este campo es de: 500!")]
+        [DataType(DataType.Password)]
         public string ContraseñaUsuario { get; set; }
         public Nullable<int> IdRol { get; set; }
         public string Token_Recovery { get; set; }
         public string Sal { get; set; }
     
+        public virtual Tbl_Roles Tbl_Roles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tbl_Fichos> Tbl_Fichos { get; set; }
-        public virtual Tbl_Roles Tbl_Roles { get; set; }
     }
 }

@@ -11,7 +11,8 @@ namespace NC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Tbl_Fichos
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,8 +22,16 @@ namespace NC.Models
         }
     
         public int IdFicho { get; set; }
+
+        [Required(ErrorMessage = "¡Este campo es requerido si desea reservar el cupo!")]
+        [DataType(DataType.Date)]
         public System.DateTime FechaFicho { get; set; }
+        
         public Nullable<int> IdUsuario { get; set; }
+
+        [Required(ErrorMessage = "¡Este campo es requerido si desea reservar el cupo!")]
+        [DataType(DataType.Time)]
+        public Nullable<System.TimeSpan> HoraFicho { get; set; }
     
         public virtual Tbl_Usuarios Tbl_Usuarios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

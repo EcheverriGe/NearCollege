@@ -1,65 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="NCModelStoreContainer" CdmEntityContainer="NCEntities">
-    <EntitySetMapping Name="Tbl_Fichos">
-      <EntityTypeMapping TypeName="NCModel.Tbl_Fichos">
-        <MappingFragment StoreEntitySet="Tbl_Fichos">
-          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
-          <ScalarProperty Name="FechaFicho" ColumnName="FechaFicho" />
-          <ScalarProperty Name="IdFicho" ColumnName="IdFicho" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Tbl_Grados">
       <EntityTypeMapping TypeName="NCModel.Tbl_Grados">
         <MappingFragment StoreEntitySet="Tbl_Grados">
-          <ScalarProperty Name="DisponibilidadCupoGrado" ColumnName="DisponibilidadCupoGrado" />
-          <ScalarProperty Name="JornadaGrado" ColumnName="JornadaGrado" />
-          <ScalarProperty Name="NombreGrado" ColumnName="NombreGrado" />
           <ScalarProperty Name="IdGrado" ColumnName="IdGrado" />
+          <ScalarProperty Name="NombreGrado" ColumnName="NombreGrado" />
+          <ScalarProperty Name="JornadaGrado" ColumnName="JornadaGrado" />
+          <ScalarProperty Name="DisponibilidadCupoGrado" ColumnName="DisponibilidadCupoGrado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_Grados_Fichos">
       <EntityTypeMapping TypeName="NCModel.Tbl_Grados_Fichos">
         <MappingFragment StoreEntitySet="Tbl_Grados_Fichos">
-          <ScalarProperty Name="IdGrado" ColumnName="IdGrado" />
-          <ScalarProperty Name="IdFicho" ColumnName="IdFicho" />
           <ScalarProperty Name="IdGRadosFichos" ColumnName="IdGRadosFichos" />
+          <ScalarProperty Name="IdFicho" ColumnName="IdFicho" />
+          <ScalarProperty Name="IdGrado" ColumnName="IdGrado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_Modulos">
       <EntityTypeMapping TypeName="NCModel.Tbl_Modulos">
         <MappingFragment StoreEntitySet="Tbl_Modulos">
-          <ScalarProperty Name="NombreModulo" ColumnName="NombreModulo" />
           <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
+          <ScalarProperty Name="NombreModulo" ColumnName="NombreModulo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_Operaciones">
       <EntityTypeMapping TypeName="NCModel.Tbl_Operaciones">
         <MappingFragment StoreEntitySet="Tbl_Operaciones">
-          <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
-          <ScalarProperty Name="NombreOperacion" ColumnName="NombreOperacion" />
           <ScalarProperty Name="IdOperacion" ColumnName="IdOperacion" />
+          <ScalarProperty Name="NombreOperacion" ColumnName="NombreOperacion" />
+          <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_Roles">
       <EntityTypeMapping TypeName="NCModel.Tbl_Roles">
         <MappingFragment StoreEntitySet="Tbl_Roles">
-          <ScalarProperty Name="NombreRol" ColumnName="NombreRol" />
           <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+          <ScalarProperty Name="NombreRol" ColumnName="NombreRol" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_Roles_Operaciones">
       <EntityTypeMapping TypeName="NCModel.Tbl_Roles_Operaciones">
         <MappingFragment StoreEntitySet="Tbl_Roles_Operaciones">
-          <ScalarProperty Name="IdOperacion" ColumnName="IdOperacion" />
-          <ScalarProperty Name="IdRol" ColumnName="IdRol" />
           <ScalarProperty Name="IdRolOperacion" ColumnName="IdRolOperacion" />
+          <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+          <ScalarProperty Name="IdOperacion" ColumnName="IdOperacion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -74,6 +65,16 @@
           <ScalarProperty Name="ApellidoUsuario" ColumnName="ApellidoUsuario" />
           <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
           <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Fichos">
+      <EntityTypeMapping TypeName="NCModel.Tbl_Fichos">
+        <MappingFragment StoreEntitySet="Tbl_Fichos">
+          <ScalarProperty Name="HoraFicho" ColumnName="HoraFicho" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="FechaFicho" ColumnName="FechaFicho" />
+          <ScalarProperty Name="IdFicho" ColumnName="IdFicho" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

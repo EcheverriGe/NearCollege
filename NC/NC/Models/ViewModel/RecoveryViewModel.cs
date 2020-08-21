@@ -9,7 +9,7 @@ namespace NC.Models.ViewModel
 {
     public class RecoveryViewModel
     {
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "¡El dato recién ingresado no está validado como una dirección de correo electrónico!")]
         [Required (ErrorMessage = "¡Si desea recuperar su contraseña, debe completar este campo!")]
         public string CorreoUsuario { get; set; }
     }

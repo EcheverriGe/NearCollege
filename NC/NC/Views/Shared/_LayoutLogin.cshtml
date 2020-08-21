@@ -11,13 +11,6 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <br />
-    <div class="alert alert-success text-center" role="alert">
-        @ViewBag.Message
-    </div>
-    <div class="alert alert-danger text-center" role="alert">
-        @ViewBag.Error
-    </div>
     <div class="container" style="height:50%;">
         <div class="row">
             <div class="navbar navbar-inverse navbar-fixed-top">
@@ -62,11 +55,14 @@
                     </div>
                 </div>
             </div>
-            <div class="row-col-md-5" style="position:relative; left:90%; bottom:530px;">
+            <div class="row-col-md-5" style="position:relative; left:93%; bottom:530px;">
                 <div style="margin-top:100px ;">
                     <h2>Inicia sesión</h2>
-                    <div class="danger">
+                    <div class="text-danger">
                         @ViewBag.Error
+                    </div>
+                    <div class="text-success">
+                        @ViewBag.Message
                     </div>
                     <form id="frm" action="@Url.Content("~/Acceso/Login")" method="post">
                         <div class="form-group">
@@ -81,7 +77,7 @@
                         </div>
                         <br />
                         <div class="form-group">
-                            <input type="submit" value="Iniciar sesión" class="btn btn-primary" />
+                            <input type="submit" value="Iniciar Sesión" class="btn btn-primary" />
                         </div>
                         <div>
                             @Html.ActionLink("¿Olvidaste tu contraseña?", "StartRecovery")
