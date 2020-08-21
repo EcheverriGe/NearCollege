@@ -18,7 +18,7 @@ namespace NC.Models
         public Nullable<int> IdFicho { get; set; }
         public Nullable<int> IdGrado { get; set; }
     
-        public virtual Tbl_Fichos Tbl_Fichos { get; set; }
         public virtual Tbl_Grados Tbl_Grados { get; set; }
+        public virtual Tbl_Fichos Tbl_Fichos { get; set; }
     }
 }

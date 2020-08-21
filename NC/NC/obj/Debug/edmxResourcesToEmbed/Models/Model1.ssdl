@@ -7,6 +7,7 @@
     <Property Name="IdFicho" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FechaFicho" Type="date" Nullable="false" />
     <Property Name="IdUsuario" Type="int" />
+    <Property Name="HoraFicho" Type="time" Precision="7" />
   </EntityType>
   <EntityType Name="Tbl_Grados">
     <Key>
@@ -68,7 +69,7 @@
     <Property Name="Token_Recovery" Type="varchar" MaxLength="200" />
     <Property Name="Sal" Type="varchar" MaxLength="500" />
   </EntityType>
-  <Association Name="FK__Tbl_Ficho__IdUsu__3C69FB99">
+  <Association Name="FK__Tbl_Ficho__IdUsu__29572725">
     <End Role="Tbl_Usuarios" Type="Self.Tbl_Usuarios" Multiplicity="0..1" />
     <End Role="Tbl_Fichos" Type="Self.Tbl_Fichos" Multiplicity="*" />
     <ReferentialConstraint>
@@ -80,7 +81,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tbl_Grado__IdFic__412EB0B6">
+  <Association Name="FK__Tbl_Grado__IdFic__2E1BDC42">
     <End Role="Tbl_Fichos" Type="Self.Tbl_Fichos" Multiplicity="0..1" />
     <End Role="Tbl_Grados_Fichos" Type="Self.Tbl_Grados_Fichos" Multiplicity="*" />
     <ReferentialConstraint>
@@ -92,7 +93,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tbl_Grado__IdGra__4222D4EF">
+  <Association Name="FK__Tbl_Grado__IdGra__2F10007B">
     <End Role="Tbl_Grados" Type="Self.Tbl_Grados" Multiplicity="0..1" />
     <End Role="Tbl_Grados_Fichos" Type="Self.Tbl_Grados_Fichos" Multiplicity="*" />
     <ReferentialConstraint>
@@ -104,7 +105,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tbl_Opera__IdMod__46E78A0C">
+  <Association Name="FK__Tbl_Opera__IdMod__33D4B598">
     <End Role="Tbl_Modulos" Type="Self.Tbl_Modulos" Multiplicity="0..1" />
     <End Role="Tbl_Operaciones" Type="Self.Tbl_Operaciones" Multiplicity="*" />
     <ReferentialConstraint>
@@ -116,7 +117,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tbl_Roles__IdOpe__4AB81AF0">
+  <Association Name="FK__Tbl_Roles__IdOpe__37A5467C">
     <End Role="Tbl_Operaciones" Type="Self.Tbl_Operaciones" Multiplicity="0..1" />
     <End Role="Tbl_Roles_Operaciones" Type="Self.Tbl_Roles_Operaciones" Multiplicity="*" />
     <ReferentialConstraint>
@@ -128,7 +129,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tbl_Roles__IdRol__49C3F6B7">
+  <Association Name="FK__Tbl_Roles__IdRol__36B12243">
     <End Role="Tbl_Roles" Type="Self.Tbl_Roles" Multiplicity="0..1" />
     <End Role="Tbl_Roles_Operaciones" Type="Self.Tbl_Roles_Operaciones" Multiplicity="*" />
     <ReferentialConstraint>
@@ -140,7 +141,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tbl_Usuar__IdRol__398D8EEE">
+  <Association Name="FK__Tbl_Usuar__IdRol__267ABA7A">
     <End Role="Tbl_Roles" Type="Self.Tbl_Roles" Multiplicity="0..1" />
     <End Role="Tbl_Usuarios" Type="Self.Tbl_Usuarios" Multiplicity="*" />
     <ReferentialConstraint>
@@ -161,31 +162,31 @@
     <EntitySet Name="Tbl_Roles" EntityType="Self.Tbl_Roles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tbl_Roles_Operaciones" EntityType="Self.Tbl_Roles_Operaciones" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tbl_Usuarios" EntityType="Self.Tbl_Usuarios" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Tbl_Ficho__IdUsu__3C69FB99" Association="Self.FK__Tbl_Ficho__IdUsu__3C69FB99">
+    <AssociationSet Name="FK__Tbl_Ficho__IdUsu__29572725" Association="Self.FK__Tbl_Ficho__IdUsu__29572725">
       <End Role="Tbl_Usuarios" EntitySet="Tbl_Usuarios" />
       <End Role="Tbl_Fichos" EntitySet="Tbl_Fichos" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tbl_Grado__IdFic__412EB0B6" Association="Self.FK__Tbl_Grado__IdFic__412EB0B6">
+    <AssociationSet Name="FK__Tbl_Grado__IdFic__2E1BDC42" Association="Self.FK__Tbl_Grado__IdFic__2E1BDC42">
       <End Role="Tbl_Fichos" EntitySet="Tbl_Fichos" />
       <End Role="Tbl_Grados_Fichos" EntitySet="Tbl_Grados_Fichos" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tbl_Grado__IdGra__4222D4EF" Association="Self.FK__Tbl_Grado__IdGra__4222D4EF">
+    <AssociationSet Name="FK__Tbl_Grado__IdGra__2F10007B" Association="Self.FK__Tbl_Grado__IdGra__2F10007B">
       <End Role="Tbl_Grados" EntitySet="Tbl_Grados" />
       <End Role="Tbl_Grados_Fichos" EntitySet="Tbl_Grados_Fichos" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tbl_Opera__IdMod__46E78A0C" Association="Self.FK__Tbl_Opera__IdMod__46E78A0C">
+    <AssociationSet Name="FK__Tbl_Opera__IdMod__33D4B598" Association="Self.FK__Tbl_Opera__IdMod__33D4B598">
       <End Role="Tbl_Modulos" EntitySet="Tbl_Modulos" />
       <End Role="Tbl_Operaciones" EntitySet="Tbl_Operaciones" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tbl_Roles__IdOpe__4AB81AF0" Association="Self.FK__Tbl_Roles__IdOpe__4AB81AF0">
+    <AssociationSet Name="FK__Tbl_Roles__IdOpe__37A5467C" Association="Self.FK__Tbl_Roles__IdOpe__37A5467C">
       <End Role="Tbl_Operaciones" EntitySet="Tbl_Operaciones" />
       <End Role="Tbl_Roles_Operaciones" EntitySet="Tbl_Roles_Operaciones" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tbl_Roles__IdRol__49C3F6B7" Association="Self.FK__Tbl_Roles__IdRol__49C3F6B7">
+    <AssociationSet Name="FK__Tbl_Roles__IdRol__36B12243" Association="Self.FK__Tbl_Roles__IdRol__36B12243">
       <End Role="Tbl_Roles" EntitySet="Tbl_Roles" />
       <End Role="Tbl_Roles_Operaciones" EntitySet="Tbl_Roles_Operaciones" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tbl_Usuar__IdRol__398D8EEE" Association="Self.FK__Tbl_Usuar__IdRol__398D8EEE">
+    <AssociationSet Name="FK__Tbl_Usuar__IdRol__267ABA7A" Association="Self.FK__Tbl_Usuar__IdRol__267ABA7A">
       <End Role="Tbl_Roles" EntitySet="Tbl_Roles" />
       <End Role="Tbl_Usuarios" EntitySet="Tbl_Usuarios" />
     </AssociationSet>

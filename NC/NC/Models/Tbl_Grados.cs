@@ -11,7 +11,8 @@ namespace NC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Tbl_Grados
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,10 +20,19 @@ namespace NC.Models
         {
             this.Tbl_Grados_Fichos = new HashSet<Tbl_Grados_Fichos>();
         }
-    
+        
         public int IdGrado { get; set; }
+
+        [Required(ErrorMessage = "¡Este campo es requerido si desea registrar el grado!")]
+        [MaxLength(20, ErrorMessage = "¡La cantidad de caracteres máxima permitida para este campo es de: 20!")]
         public string NombreGrado { get; set; }
+
+        [Required(ErrorMessage = "¡Este campo es requerido si desea registrar el grado!")]
+        [MaxLength(8, ErrorMessage = "¡La cantidad de caracteres máxima permitida para este campo es de: 8!")]
         public string JornadaGrado { get; set; }
+
+        [Required(ErrorMessage = "¡Este campo es requerido si desea registrar el grado!")]
+        [MaxLength(13, ErrorMessage = "¡La cantidad de caracteres máxima permitida para este campo es de: 13!")]
         public string DisponibilidadCupoGrado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

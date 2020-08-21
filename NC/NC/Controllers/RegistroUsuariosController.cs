@@ -58,6 +58,7 @@ namespace NC.Controllers
         {
             if (ModelState.IsValid)
             {
+                db.Tbl_Usuarios.Add(tbl_Usuarios);
                 tbl_Usuarios.ContraseñaUsuario = Hashing.HashPassword(tbl_Usuarios.ContraseñaUsuario);
                 db.Tbl_Usuarios.Add(tbl_Usuarios);
                 db.SaveChanges();

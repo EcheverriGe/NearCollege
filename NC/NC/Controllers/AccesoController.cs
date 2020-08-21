@@ -34,6 +34,7 @@ namespace NC.Controllers
                                 select d;
                     if (lst.Count()>0)
                     {
+
                         Tbl_Usuarios oUser = lst.First();
                         Session["CorreoUsuario"] = oUser;
                         return Content("1");
@@ -49,30 +50,6 @@ namespace NC.Controllers
             {
                 return Content("Ocurrió un error" + ex.Message);
             }
-
-           // try
-           // {
-                //using (Models.NCEntities db= new Models.NCEntities())
-                //{
-                     //var oUser = (from d in db.Tbl_Usuarios
-                       //          where d.CorreoUsuario == CorreoUsuario.Trim() && d.ContraseñaUsuario == ContraseñaUsuario.Trim()
-                     //            select d).FirstOrDefault();
-                   // if (oUser == null)
-                   // {
-                       // ViewBag.Error = "Usuario o contraseña incorrectos";
-                     //   return View();
-                   // }
-
-                 //   Session["CorreoUsuario"] = oUser;
-               // }
-
-             //   return RedirectToAction("Index", "Home");
-           // }
-           // catch (Exception ex)
-            //{
-              //  ViewBag.Error = ex.Message;
-             //   return View();
-            //}
         }
 
         [HttpGet]
@@ -184,8 +161,8 @@ namespace NC.Controllers
 
         private void SendEmail(string EmailDestino, string Token)
         {
-            string EmailOrigen = "winny0507c@gmail.com";
-            string Contraseña = "es1001250012cc";
+            string EmailOrigen = "nearcollege0405@gmail.com";
+            string Contraseña = "es1001250012cc..";
             string url = urlDomain+"/Acceso/Recovery/?Token="+Token;
 
             MailMessage oMailMessage = new MailMessage(EmailOrigen, EmailDestino, "Recuperación de Contraseña [NearCollege]",
