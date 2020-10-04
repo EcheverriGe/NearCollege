@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace NC.Controllers
 {
+    // En este controlador tenemos el index, el acerca de y, el contáctanos con sus respectivas vistas
     public class HomeController : Controller
     {
         public ActionResult Index()

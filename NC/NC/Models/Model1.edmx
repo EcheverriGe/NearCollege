@@ -12,7 +12,7 @@
           <Property Name="IdFicho" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FechaFicho" Type="date" Nullable="false" />
           <Property Name="IdUsuario" Type="int" />
-          <Property Name="HoraFicho" Type="time" Precision="7" />
+          <Property Name="HoraFicho" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Tbl_Grados">
           <Key>
@@ -377,7 +377,7 @@
           <Property Name="IdFicho" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FechaFicho" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="IdUsuario" Type="Int32" />
-          <Property Name="HoraFicho" Type="Time" Precision="7" />
+          <Property Name="HoraFicho" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Tbl_Usuarios" Relationship="NCModel.FK__Tbl_Ficho__IdUsu__29572725" FromRole="Tbl_Fichos" ToRole="Tbl_Usuarios" />
           <NavigationProperty Name="Tbl_Grados_Fichos" Relationship="NCModel.FK__Tbl_Grado__IdFic__2E1BDC42" FromRole="Tbl_Fichos" ToRole="Tbl_Grados_Fichos" />
         </EntityType>

@@ -87,8 +87,8 @@ C:\Users\Juan Camilo\source\repos\NC\NC\obj\Debug\NC.csproj.CoreCompileInputs.ca
 C:\Users\Juan Camilo\source\repos\NC\NC\obj\Debug\NC.csproj.CopyComplete
 C:\Users\Juan Camilo\source\repos\NC\NC\obj\Debug\NC.dll
 C:\Users\Juan Camilo\source\repos\NC\NC\obj\Debug\NC.pdb
-C:\Users\Juan Camilo\source\repos\NC\NC\obj\Debug\NC.csprojAssemblyReference.cache
 C:\Users\Juan Camilo\source\repos\NC\NC\bin\BCrypt.Net.dll
 C:\Users\Juan Camilo\source\repos\NC\NC\bin\BouncyCastle.Crypto.dll
 C:\Users\Juan Camilo\source\repos\NC\NC\bin\BCrypt.Net.xml
 C:\Users\Juan Camilo\source\repos\NC\NC\bin\Flash.Mvc5.dll
+C:\Users\Juan Camilo\source\repos\NC\NC\obj\Debug\NC.csprojAssemblyReference.cache

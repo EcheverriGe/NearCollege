@@ -13,13 +13,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.NombreGrado)
+            <label>Grado</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.JornadaGrado)
+            <label>Jornada</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DisponibilidadCupoGrado)
+            <label>Disponibilidad</label>
         </th>
         <th></th>
     </tr>
@@ -36,9 +36,9 @@
             @Html.DisplayFor(modelItem => item.DisponibilidadCupoGrado)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.IdGrado }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.IdGrado }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.IdGrado })
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdGrado }, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.IdGrado }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.IdGrado }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

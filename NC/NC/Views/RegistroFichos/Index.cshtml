@@ -13,13 +13,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.FechaFicho)
+            <label>Fecha</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HoraFicho)
+            <label>Hora</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Tbl_Usuarios.NombreUsuario)
+            <label>Usuario</label>
         </th>
         <th></th>
     </tr>
@@ -36,7 +36,9 @@
             @Html.DisplayFor(modelItem => item.Tbl_Usuarios.NombreUsuario)
         </td>
         <td>
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.IdFicho })
+            @Html.ActionLink("Editar", "Edit", new { id = item.IdFicho }, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Detalles", "Details", new { id = item.IdFicho }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.IdFicho }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

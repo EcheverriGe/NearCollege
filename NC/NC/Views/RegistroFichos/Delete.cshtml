@@ -29,7 +29,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.FechaFicho)
+            <label>Fecha:</label>
         </dt>
 
         <dd>
@@ -37,7 +37,15 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Tbl_Usuarios.NombreUsuario)
+            <label>Hora:</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoraFicho)
+        </dd>
+
+        <dt>
+            <label>Usuario:</label>
         </dt>
 
         <dd>

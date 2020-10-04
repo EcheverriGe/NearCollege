@@ -13,16 +13,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.NombreUsuario)
+            <label>Nombre</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ApellidoUsuario)
+            <label>Apellido</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CorreoUsuario)
+            <label>Correo</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Tbl_Roles.NombreRol)
+            <label>Rol</label>
         </th>
         <th></th>
     </tr>
@@ -31,21 +31,21 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.NombreUsuario, "Nombre")
+                @Html.DisplayFor(modelItem => item.NombreUsuario)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ApellidoUsuario, "Apellido")
+                @Html.DisplayFor(modelItem => item.ApellidoUsuario)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CorreoUsuario, "Correo")
+                @Html.DisplayFor(modelItem => item.CorreoUsuario)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Tbl_Roles.NombreRol, "Rol")
+                @Html.DisplayFor(modelItem => item.Tbl_Roles.NombreRol)
             </td>
             <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.IdUsuario}) |
-                @Html.ActionLink("Detalles", "Details", new { id = item.IdUsuario }) |
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdUsuario })
+                @Html.ActionLink("Editar", "Edit", new { id = item.IdUsuario}, new { @class = "btn btn-info"}) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.IdUsuario}, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdUsuario}, new { @class = "btn btn-danger"})
             </td>
         </tr>
     }

@@ -1,0 +1,70 @@
+﻿@model NC.Models.Tbl_Fichos
+
+@{
+    ViewBag.Title = "Editar información";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    function ConfirmDelete() {
+        var respuesta = confirm("¿Estás seguro?,  ¡Al darle click en aceptar este ficho será editado!");
+
+        if (respuesta == true) {
+
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+</script>
+
+<h2 class="text-center">Editar información</h2>
+<br />
+<div class="alert alert-info" role="alert">
+    <p class="text-center"> ¿Está seguro que desea editar la información de este ficho? </p>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.IdFicho)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.FechaFicho, "Fecha", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.FechaFicho, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FechaFicho, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.HoraFicho, "Hora", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.HoraFicho, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.HoraFicho, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.IdUsuario, "Usuario", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.IdUsuario, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.IdUsuario, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-actions no-color">
+        <input type="submit" onclick="return ConfirmDelete()" value="Guardar cambios" class="btn btn-primary" /> |
+        @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-info" })
+    </div>
+</div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
