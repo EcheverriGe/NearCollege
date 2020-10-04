@@ -15,7 +15,7 @@ namespace NC.Controllers
     public class RegistroGradosController : Controller
     {
         // Variable que hace referencia y conexión a la base de datos
-        private NCEntities db = new NCEntities();
+        private NCEntities1 db = new NCEntities1();
 
         // Método para mostrar el contenido de la tabla (Tbl_Grados)
         public ActionResult Index()

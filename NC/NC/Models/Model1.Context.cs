@@ -13,10 +13,10 @@ namespace NC.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NCEntities : DbContext
+    public partial class NCEntities1 : DbContext
     {
-        public NCEntities()
-            : base("name=NCEntities")
+        public NCEntities1()
+            : base("name=NCEntities1")
         {
         }
     
@@ -25,6 +25,7 @@ namespace NC.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Tbl_Fichos> Tbl_Fichos { get; set; }
         public virtual DbSet<Tbl_Grados> Tbl_Grados { get; set; }
         public virtual DbSet<Tbl_Grados_Fichos> Tbl_Grados_Fichos { get; set; }
         public virtual DbSet<Tbl_Modulos> Tbl_Modulos { get; set; }
@@ -32,6 +33,5 @@ namespace NC.Models
         public virtual DbSet<Tbl_Roles> Tbl_Roles { get; set; }
         public virtual DbSet<Tbl_Roles_Operaciones> Tbl_Roles_Operaciones { get; set; }
         public virtual DbSet<Tbl_Usuarios> Tbl_Usuarios { get; set; }
-        public virtual DbSet<Tbl_Fichos> Tbl_Fichos { get; set; }
     }
 }

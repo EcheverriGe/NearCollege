@@ -4,12 +4,16 @@
     ViewBag.Title = "Página principal (Administrador)";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <i class="fas fa-users" style="left:200px",></i>
+<i class="fas fa-users" style="left:200px" ,></i>
 <h2 class="text-center">Usuarios registrados</h2>
 
 <p>
     @Html.ActionLink("Agregar", "Create", null, new { @class = "btn btn-info " })
 </p>
+
+<button class="btn btn-primary" role="link" onclick="window.location='https://localhost:44303/ReportePdf/pdf'">Reporte Usuarios</button>
+
+
 <table class="table">
     <tr>
         <th>
@@ -43,9 +47,9 @@
                 @Html.DisplayFor(modelItem => item.Tbl_Roles.NombreRol)
             </td>
             <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.IdUsuario}, new { @class = "btn btn-info"}) |
-                @Html.ActionLink("Detalles", "Details", new { id = item.IdUsuario}, new { @class = "btn btn-warning" }) |
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdUsuario}, new { @class = "btn btn-danger"})
+                @Html.ActionLink("Editar", "Edit", new { id = item.IdUsuario }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.IdUsuario }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdUsuario }, new { @class = "btn btn-danger" })
             </td>
         </tr>
     }

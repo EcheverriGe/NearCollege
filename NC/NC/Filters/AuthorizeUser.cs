@@ -18,7 +18,7 @@ namespace NC.Filters
         private Tbl_Usuarios oUsuario;
 
         // Este método es privado también y, es la conexión con la base de datos
-        private NCEntities db = new NCEntities();
+        private NCEntities1 db = new NCEntities1();
 
         // Aquí estamos definiendo como parámetro privado a IdOperacion
         private int IdOperacion;

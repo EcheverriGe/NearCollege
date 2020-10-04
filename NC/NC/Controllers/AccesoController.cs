@@ -34,7 +34,7 @@ namespace NC.Controllers
             try
             {
                 // Aquí se hace la conexión a la base de datos
-                using (NCEntities db = new NCEntities())
+                using (NCEntities1 db = new NCEntities1())
                 {
                     // Y en estas 3 líneas, se hacen las validaciones
                     var lst = from d in db.Tbl_Usuarios
@@ -85,7 +85,7 @@ namespace NC.Controllers
                 // Aquí se genera un token hasheado, usando la conexión con la base de datos para albergarlo en su respectivo campo
                 string Token = GetSha256(Guid.NewGuid().ToString());
 
-                using (Models.NCEntities db = new Models.NCEntities())
+                using (Models.NCEntities1 db = new Models.NCEntities1())
                 {
                     // Aquí se hace la validación en la base de datos del correo ingresado, y con el que 
                     // fue registrado, para así mandarle el correo con la recuperación
@@ -117,7 +117,7 @@ namespace NC.Controllers
             // Se compara el token, y la contraseña se restablece a la designada por el usuario
             Models.ViewModel.RecoveryPassWordViewModel model = new Models.ViewModel.RecoveryPassWordViewModel();
             model.Token = Token;
-            using (Models.NCEntities db=new Models.NCEntities())
+            using (Models.NCEntities1 db=new Models.NCEntities1())
             {
                 if(model.Token==null || model.Token.Trim().Equals(""))
                 {
@@ -147,7 +147,7 @@ namespace NC.Controllers
 
                 // Aquí más de lo mismo, hacemos la validación de NCEntities con la base de datos para
                 // comparar los tokens y ver si son los mismo o, ha sido utilizado con anterioridad
-                using (Models.NCEntities db= new Models.NCEntities())
+                using (Models.NCEntities1 db= new Models.NCEntities1())
                 {
                     // Se hace la validación del token, para ver si ha sido usado o no
                     var oUser = db.Tbl_Usuarios.Where(d => d.Token_Recovery == model.Token).FirstOrDefault();
