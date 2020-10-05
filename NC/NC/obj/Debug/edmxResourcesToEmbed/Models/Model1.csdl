@@ -1,16 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="NCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Tbl_Fichos">
-    <Key>
-      <PropertyRef Name="IdFicho" />
-    </Key>
-    <Property Name="IdFicho" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FechaFicho" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="IdUsuario" Type="Int32" />
-    <Property Name="HoraFicho" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Tbl_Usuarios" Relationship="Self.FK__Tbl_Ficho__IdUsu__44FF419A" FromRole="Tbl_Fichos" ToRole="Tbl_Usuarios" />
-    <NavigationProperty Name="Tbl_Grados_Fichos" Relationship="Self.FK__Tbl_Grado__IdFic__45F365D3" FromRole="Tbl_Fichos" ToRole="Tbl_Grados_Fichos" />
-  </EntityType>
   <EntityType Name="Tbl_Grados">
     <Key>
       <PropertyRef Name="IdGrado" />
@@ -28,8 +17,8 @@
     <Property Name="IdGRadosFichos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdFicho" Type="Int32" />
     <Property Name="IdGrado" Type="Int32" />
-    <NavigationProperty Name="Tbl_Fichos" Relationship="Self.FK__Tbl_Grado__IdFic__45F365D3" FromRole="Tbl_Grados_Fichos" ToRole="Tbl_Fichos" />
     <NavigationProperty Name="Tbl_Grados" Relationship="Self.FK__Tbl_Grado__IdGra__46E78A0C" FromRole="Tbl_Grados_Fichos" ToRole="Tbl_Grados" />
+    <NavigationProperty Name="Tbl_Fichos" Relationship="NCModel.FK__Tbl_Grado__IdFic__45F365D3" FromRole="Tbl_Grados_Fichos" ToRole="Tbl_Fichos" />
   </EntityType>
   <EntityType Name="Tbl_Modulos">
     <Key>
@@ -80,33 +69,9 @@
     <Property Name="IdRol" Type="Int32" />
     <Property Name="Token_Recovery" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="Sal" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Tbl_Fichos" Relationship="Self.FK__Tbl_Ficho__IdUsu__44FF419A" FromRole="Tbl_Usuarios" ToRole="Tbl_Fichos" />
     <NavigationProperty Name="Tbl_Roles" Relationship="Self.FK__Tbl_Usuar__IdRol__4AB81AF0" FromRole="Tbl_Usuarios" ToRole="Tbl_Roles" />
+    <NavigationProperty Name="Tbl_Fichos" Relationship="NCModel.FK__Tbl_Ficho__IdUsu__44FF419A" FromRole="Tbl_Usuarios" ToRole="Tbl_Fichos" />
   </EntityType>
-  <Association Name="FK__Tbl_Ficho__IdUsu__44FF419A">
-    <End Role="Tbl_Usuarios" Type="Self.Tbl_Usuarios" Multiplicity="0..1" />
-    <End Role="Tbl_Fichos" Type="Self.Tbl_Fichos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Tbl_Usuarios">
-        <PropertyRef Name="IdUsuario" />
-      </Principal>
-      <Dependent Role="Tbl_Fichos">
-        <PropertyRef Name="IdUsuario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Tbl_Grado__IdFic__45F365D3">
-    <End Role="Tbl_Fichos" Type="Self.Tbl_Fichos" Multiplicity="0..1" />
-    <End Role="Tbl_Grados_Fichos" Type="Self.Tbl_Grados_Fichos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Tbl_Fichos">
-        <PropertyRef Name="IdFicho" />
-      </Principal>
-      <Dependent Role="Tbl_Grados_Fichos">
-        <PropertyRef Name="IdFicho" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__Tbl_Grado__IdGra__46E78A0C">
     <End Role="Tbl_Grados" Type="Self.Tbl_Grados" Multiplicity="0..1" />
     <End Role="Tbl_Grados_Fichos" Type="Self.Tbl_Grados_Fichos" Multiplicity="*" />
@@ -168,7 +133,6 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="NCEntities1" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Tbl_Fichos" EntityType="Self.Tbl_Fichos" />
     <EntitySet Name="Tbl_Grados" EntityType="Self.Tbl_Grados" />
     <EntitySet Name="Tbl_Grados_Fichos" EntityType="Self.Tbl_Grados_Fichos" />
     <EntitySet Name="Tbl_Modulos" EntityType="Self.Tbl_Modulos" />
@@ -176,14 +140,6 @@
     <EntitySet Name="Tbl_Roles" EntityType="Self.Tbl_Roles" />
     <EntitySet Name="Tbl_Roles_Operaciones" EntityType="Self.Tbl_Roles_Operaciones" />
     <EntitySet Name="Tbl_Usuarios" EntityType="Self.Tbl_Usuarios" />
-    <AssociationSet Name="FK__Tbl_Ficho__IdUsu__44FF419A" Association="Self.FK__Tbl_Ficho__IdUsu__44FF419A">
-      <End Role="Tbl_Usuarios" EntitySet="Tbl_Usuarios" />
-      <End Role="Tbl_Fichos" EntitySet="Tbl_Fichos" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Tbl_Grado__IdFic__45F365D3" Association="Self.FK__Tbl_Grado__IdFic__45F365D3">
-      <End Role="Tbl_Fichos" EntitySet="Tbl_Fichos" />
-      <End Role="Tbl_Grados_Fichos" EntitySet="Tbl_Grados_Fichos" />
-    </AssociationSet>
     <AssociationSet Name="FK__Tbl_Grado__IdGra__46E78A0C" Association="Self.FK__Tbl_Grado__IdGra__46E78A0C">
       <End Role="Tbl_Grados" EntitySet="Tbl_Grados" />
       <End Role="Tbl_Grados_Fichos" EntitySet="Tbl_Grados_Fichos" />
@@ -204,5 +160,49 @@
       <End Role="Tbl_Roles" EntitySet="Tbl_Roles" />
       <End Role="Tbl_Usuarios" EntitySet="Tbl_Usuarios" />
     </AssociationSet>
+    <EntitySet Name="Tbl_Fichos" EntityType="NCModel.Tbl_Fichos" />
+    <AssociationSet Name="FK__Tbl_Ficho__IdUsu__44FF419A" Association="NCModel.FK__Tbl_Ficho__IdUsu__44FF419A">
+      <End Role="Tbl_Usuarios" EntitySet="Tbl_Usuarios" />
+      <End Role="Tbl_Fichos" EntitySet="Tbl_Fichos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tbl_Grado__IdFic__45F365D3" Association="NCModel.FK__Tbl_Grado__IdFic__45F365D3">
+      <End Role="Tbl_Fichos" EntitySet="Tbl_Fichos" />
+      <End Role="Tbl_Grados_Fichos" EntitySet="Tbl_Grados_Fichos" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Tbl_Fichos">
+    <Key>
+      <PropertyRef Name="IdFicho" />
+    </Key>
+    <Property Name="IdFicho" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUsuario" Type="Int32" />
+    <Property Name="HoraFicho" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaFicho" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Tbl_Usuarios" Relationship="NCModel.FK__Tbl_Ficho__IdUsu__44FF419A" FromRole="Tbl_Fichos" ToRole="Tbl_Usuarios" />
+    <NavigationProperty Name="Tbl_Grados_Fichos" Relationship="NCModel.FK__Tbl_Grado__IdFic__45F365D3" FromRole="Tbl_Fichos" ToRole="Tbl_Grados_Fichos" />
+  </EntityType>
+  <Association Name="FK__Tbl_Ficho__IdUsu__44FF419A">
+    <End Type="NCModel.Tbl_Usuarios" Role="Tbl_Usuarios" Multiplicity="0..1" />
+    <End Type="NCModel.Tbl_Fichos" Role="Tbl_Fichos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Tbl_Fichos">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tbl_Grado__IdFic__45F365D3">
+    <End Type="NCModel.Tbl_Fichos" Role="Tbl_Fichos" Multiplicity="0..1" />
+    <End Type="NCModel.Tbl_Grados_Fichos" Role="Tbl_Grados_Fichos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Fichos">
+        <PropertyRef Name="IdFicho" />
+      </Principal>
+      <Dependent Role="Tbl_Grados_Fichos">
+        <PropertyRef Name="IdFicho" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

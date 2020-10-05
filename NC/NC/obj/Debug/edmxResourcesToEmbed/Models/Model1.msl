@@ -1,16 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="NCModelStoreContainer" CdmEntityContainer="NCEntities1">
-    <EntitySetMapping Name="Tbl_Fichos">
-      <EntityTypeMapping TypeName="NCModel.Tbl_Fichos">
-        <MappingFragment StoreEntitySet="Tbl_Fichos">
-          <ScalarProperty Name="IdFicho" ColumnName="IdFicho" />
-          <ScalarProperty Name="FechaFicho" ColumnName="FechaFicho" />
-          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
-          <ScalarProperty Name="HoraFicho" ColumnName="HoraFicho" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Tbl_Grados">
       <EntityTypeMapping TypeName="NCModel.Tbl_Grados">
         <MappingFragment StoreEntitySet="Tbl_Grados">
@@ -75,6 +65,16 @@
           <ScalarProperty Name="IdRol" ColumnName="IdRol" />
           <ScalarProperty Name="Token_Recovery" ColumnName="Token_Recovery" />
           <ScalarProperty Name="Sal" ColumnName="Sal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Fichos">
+      <EntityTypeMapping TypeName="NCModel.Tbl_Fichos">
+        <MappingFragment StoreEntitySet="Tbl_Fichos">
+          <ScalarProperty Name="FechaFicho" ColumnName="FechaFicho" />
+          <ScalarProperty Name="HoraFicho" ColumnName="HoraFicho" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdFicho" ColumnName="IdFicho" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

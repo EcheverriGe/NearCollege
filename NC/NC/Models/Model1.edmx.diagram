@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="d849b0b162264bb4996d5120957f9dad" Name="Diagram1">
-        <EntityTypeShape EntityType="NCModel.Tbl_Fichos" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="NCModel.Tbl_Grados" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="NCModel.Tbl_Grados_Fichos" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
         <EntityTypeShape EntityType="NCModel.Tbl_Modulos" Width="1.5" PointX="1.5" PointY="10.125" IsExpanded="true" />
@@ -13,13 +12,14 @@
         <EntityTypeShape EntityType="NCModel.Tbl_Roles" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="NCModel.Tbl_Roles_Operaciones" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NCModel.Tbl_Usuarios" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
-        <AssociationConnector Association="NCModel.FK__Tbl_Ficho__IdUsu__44FF419A" ManuallyRouted="false" />
-        <AssociationConnector Association="NCModel.FK__Tbl_Grado__IdFic__45F365D3" ManuallyRouted="false" />
         <AssociationConnector Association="NCModel.FK__Tbl_Grado__IdGra__46E78A0C" ManuallyRouted="false" />
         <AssociationConnector Association="NCModel.FK__Tbl_Opera__IdMod__47DBAE45" ManuallyRouted="false" />
         <AssociationConnector Association="NCModel.FK__Tbl_Roles__IdOpe__48CFD27E" ManuallyRouted="false" />
         <AssociationConnector Association="NCModel.FK__Tbl_Roles__IdRol__49C3F6B7" ManuallyRouted="false" />
         <AssociationConnector Association="NCModel.FK__Tbl_Usuar__IdRol__4AB81AF0" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="NCModel.Tbl_Fichos" Width="1.5" PointX="5.25" PointY="6.375" />
+        <AssociationConnector Association="NCModel.FK__Tbl_Ficho__IdUsu__44FF419A" />
+        <AssociationConnector Association="NCModel.FK__Tbl_Grado__IdFic__45F365D3" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

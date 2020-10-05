@@ -11,7 +11,7 @@ namespace NC.Models
 {
     using System;
     using System.Collections.Generic;
-
+    
     // Esta clase se encarga de monitorear, agregar, eliminar, editar cada función del proyecto para los usuarios, cabe decir
     // que también constá con una  conexión a la base de datos y, su respectiva tabla
     public partial class Tbl_Operaciones
@@ -29,7 +29,7 @@ namespace NC.Models
         // Este parámetro se encarga de darle el nombre que usted desee a la operación, no consta con validaciones por lo ya mencionado
         public string NombreOperacion { get; set; }
 
-        // Este parámetro es una ForeignKey de la tabla Tbl_Modulos, no consta con validaciones por lo ya mencionado y, es usado para
+        // Este parámetro es una ForeignKey de la tabla Tbl_Modulos, no consta con validaciones por lo ya mencionado y, es usado para 
         // designar en qué módulo va cada operación o acción que se crea nueva
         public Nullable<int> IdModulo { get; set; }
 

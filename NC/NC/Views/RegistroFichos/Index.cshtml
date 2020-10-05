@@ -12,7 +12,8 @@
 </p>
 
 <button class="btn btn-primary" role="link" onclick="window.location='https://localhost:44303/ReportePdfFichos/pdf'">Reporte Fichos</button>
-
+<br />
+<br />
 <table class="table">
     <tr>
         <th>
@@ -27,23 +28,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaFicho)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HoraFicho)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tbl_Usuarios.NombreUsuario)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id = item.IdFicho }, new { @class = "btn btn-info" }) |
-            @Html.ActionLink("Detalles", "Details", new { id = item.IdFicho }, new { @class = "btn btn-warning" }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id = item.IdFicho }, new { @class = "btn btn-danger" })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaFicho)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraFicho)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_Usuarios.NombreUsuario)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.IdFicho }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.IdFicho }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdFicho }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
 
 </table>

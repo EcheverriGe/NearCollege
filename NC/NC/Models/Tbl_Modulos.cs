@@ -11,7 +11,7 @@ namespace NC.Models
 {
     using System;
     using System.Collections.Generic;
-
+    
     // Esta clase también consta con la conexión a base de datos y, su tabla designada, cumple con el papel de separar el proyecto
     // en tres módulos y así, permitir los permisos de cada acción
     public partial class Tbl_Modulos
@@ -26,7 +26,7 @@ namespace NC.Models
         // acceso a este, de querer añadir un nuevo módulo, tendría que hacerse directamente desde la base de datos
         public int IdModulo { get; set; }
 
-        // Por otro lado, este parámetro se encarga de darle un nombre al módulo que se creará, tampoco consta con validaciones por lo
+        // Por otro lado, este parámetro se encarga de darle un nombre al módulo que se creará, tampoco consta con validaciones por lo 
         // explicado con anterioridad, sólo puede ser agregado un nuevo módulo desde su base de datos
         public string NombreModulo { get; set; }
 

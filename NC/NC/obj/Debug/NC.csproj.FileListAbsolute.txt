@@ -181,10 +181,10 @@ C:\Users\Santiago T\Documents\GitHub\NearCollege\NC\NC\bin\es\System.Web.Razor.r
 C:\Users\Santiago T\Documents\GitHub\NearCollege\NC\NC\bin\es\System.Web.WebPages.resources.dll
 C:\Users\Santiago T\Documents\GitHub\NearCollege\NC\NC\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Santiago T\Documents\GitHub\NearCollege\NC\NC\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\Santiago T\Documents\GitHub\NearCollege\NC\NC\obj\Debug\NC.csprojAssemblyReference.cache
 C:\Users\Santiago T\Documents\GitHub\NearCollege\NC\NC\obj\Debug\NC.csproj.CoreCompileInputs.cache
 C:\Users\Santiago T\Documents\GitHub\NearCollege\NC\NC\obj\Debug\NC.csproj.CopyComplete
 C:\Users\Santiago T\Documents\GitHub\NearCollege\NC\NC\obj\Debug\NC.dll
 C:\Users\Santiago T\Documents\GitHub\NearCollege\NC\NC\obj\Debug\NC.pdb
 C:\Users\Santiago T\Documents\GitHub\NearCollege\NC\NC\bin\itextsharp.dll
 C:\Users\Santiago T\Documents\GitHub\NearCollege\NC\NC\bin\itextsharp.xml
+C:\Users\Santiago T\Documents\GitHub\NearCollege\NC\NC\obj\Debug\NC.csprojAssemblyReference.cache

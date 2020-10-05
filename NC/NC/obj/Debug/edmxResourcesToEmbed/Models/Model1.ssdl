@@ -5,9 +5,9 @@
       <PropertyRef Name="IdFicho" />
     </Key>
     <Property Name="IdFicho" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FechaFicho" Type="date" Nullable="false" />
     <Property Name="IdUsuario" Type="int" />
     <Property Name="HoraFicho" Type="varchar" MaxLength="50" />
+    <Property Name="FechaFicho" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Tbl_Grados">
     <Key>
